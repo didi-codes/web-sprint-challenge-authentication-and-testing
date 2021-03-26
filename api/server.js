@@ -14,7 +14,7 @@ server.use(cors());
 server.use(express.json());
 
 server.use('/api/auth', authRouter);
-server.use('/api/jokes', restrict, jokesRouter); // only logged-in users should have access!
+server.use('/api/jokes', restrict, jokesRouter);
 
 server.get('/', (res, req) => {
   res.json({
@@ -23,3 +23,4 @@ server.get('/', (res, req) => {
 });
 
 module.exports = server;
+
