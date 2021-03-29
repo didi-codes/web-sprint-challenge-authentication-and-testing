@@ -16,9 +16,9 @@ server.use(express.json());
 server.use('/api/auth', authRouter);
 server.use('/api/jokes', restrict, jokesRouter);
 
-server.get('/', (res, req) => {
-  res.json({
-    message: 'Welcome To My Sprint',
+server.get('*', (res, req) => {
+  res.status(200).json({
+    api: 'running',
   });
 });
 
